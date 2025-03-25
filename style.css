@@ -1,0 +1,51 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Papyrus&display=swap');
+
+body {
+    background: radial-gradient(circle at top, #CDB5E0, #A3BFFA, #FFD1DC);
+    font-family: 'Cinzel', serif;
+    color: #f8f8ff;
+    text-align: center;
+}
+
+.reveal {
+    background: transparent !important; /* Override default black Reveal.js background */
+}
+
+h1, h2 {
+    font-size: 4em;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.9);
+    font-family: 'Papyrus', fantasy;
+    color: #4B0082;
+}
+
+p {
+    font-size: 1.5em;
+    opacity: 0.85;
+}
+
+.reveal .slides section {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.reveal .fragment {
+    list-style-type: none;
+    font-size: 1.3em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.reveal .fragment.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal .slides img {
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
