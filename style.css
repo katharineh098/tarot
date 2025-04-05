@@ -6,6 +6,22 @@ body {
     font-family: 'Cinzel', serif;
     color: #f8f8ff;
     text-align: center;
+    /* Center the content vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Make sure the body takes up the full viewport height */
+    margin: 0;      /* Remove default margin */
+}
+
+.container {
+    /* Ensure the image and link are centered */
+    display: inline-block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .reveal {
@@ -24,19 +40,38 @@ p {
     opacity: 0.85;
 }
 
+li {
+    font-size: 1.3em;
+    opacity: 0.85
+}
+
 .reveal .slides section {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
 }
 
+ul {
+    list-style-type: none; /* Removes bullet points */
+    padding-left: 0;       /* Removes default left padding */
+}
+
+/* Centering the image inside the <a> */
+a {
+    display: flex;               /* Turn the <a> into a flex container */
+    justify-content: center;     /* Horizontally center the image */
+    align-items: center;         /* Vertically center the image */
+    text-decoration: none;       /* Remove the default underline from the link */
+}
+
+/* Make sure the image doesn't overflow and maintains its aspect ratio */
+img {
+    max-width: 100%;  /* Ensure the image doesn't overflow the container */
+    height: auto;     /* Maintain the aspect ratio */
+}
+
 .reveal .fragment {
     list-style-type: none;
-    font-size: 1.3em;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
 
 .reveal .fragment.visible {
     opacity: 1;
@@ -47,5 +82,17 @@ p {
     max-width: 80%;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Soft dreamy page flip effect */
+.reveal .slides section {
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out, filter 2s ease-in-out;
+}
+
+/* Before the slide is visible */
+.reveal .slides section.past {
+    opacity: 0;
+    transform: rotateY(25deg) scale(0.92);
+    filter: blur(10px);
 }
 

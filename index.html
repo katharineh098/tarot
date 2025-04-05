@@ -5,7 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarot & Astrology Presentation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="style.css"> <!-- Use ONLY your custom styles -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/math/math.min.js"></script>
+    <style>
+      /* Add a watermark to all slides */
+      .reveal section {
+        position: relative;
+      }
+
+      .reveal section::after {
+        content: "K.H. present"; /* Replace this with an image URL if needed */
+      	position: absolute;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%) rotate(-30deg);
+      	opacity: 0.7; /* Adjust opacity */
+      	font-size: 5em; /* Adjust size */
+      	color: rgba(255, 255, 255, 0.5); /* Adjust color */
+      	pointer-events: none; /* Don't interfere with slide content */
+      	z-index: 9999; /* Make sure it's on top */
+    	}
+  </style>
 </head>
 
 <body>
@@ -18,31 +39,31 @@
             
             <section>
                 <h2>🔮 What is Tarot?</h2>
-                <p class="fragment">Tarot is a symbolic system used for guidance and introspection.</p>
-                <p class="fragment">It consists of 78 cards, divided into Major and Minor Arcana.</p>
+                <p>Tarot is a symbolic system used for guidance and introspection.</p>
+                <p>It consists of 78 cards, divided into Major and Minor Arcana.</p>
             </section>
             
             <section>
                 <h2>🌌 Astrology Basics</h2>
                 <ul>
-                    <li class="fragment">The study of celestial bodies and their influence</li>
-                    <li class="fragment">Each planet represents different aspects of life</li>
-                    <li class="fragment">The zodiac signs shape personality and destiny</li>
+                    <li>The study of celestial bodies and their influence</li>
+                    <li>Each planet represents different aspects of life</li>
+                    <li>The zodiac signs shape personality and destiny</li>
                 </ul>
             </section>
             
             <section>
                 <h2>🌠 Zodiac Signs</h2>
                 <p>Each sign holds unique energy and characteristics.</p>
-                <a href="#/5">Go to Tarot Cards</a>
+                <a href="#/4">Go to Tarot Cards</a>
             </section>
             
             <section>
-                <section>
-                    <h2>♠️ Tarot Cards</h2>
-                    <p>The Major Arcana consists of 22 cards.</p>
+                <section data-background-image="tarot_cards.webp" data-background-opacity="0.8">
+                    	<h2>♠️ Tarot Cards</h2>
+                    	<p>The Major Arcana consists of 22 cards.</p>
                 </section>
-                <section>
+                <section data-background-video="cosmos.mp4" data-background-opacity="0.8">
                     <h2>🌙 The Moon Card</h2>
                     <p class="fragment">Represents intuition and hidden truths.</p>
                 </section>
@@ -51,30 +72,38 @@
             <section>
                 <h2>🔢 Astrology & Mathematics</h2>
                 <p>Astrology involves numerical calculations:</p>
-                <p>\[ \frac{1}{\phi} = \phi - 1 \]</p>
+                $$ 
+		\frac{1}{\phi} = \phi - 1 
+		$$
             </section>
             
             <section>
                 <h2>📜 Embedded SVG</h2>
-                <svg width="200" height="200">
-                    <circle cx="100" cy="100" r="80" stroke="white" stroke-width="3" fill="purple" />
-                </svg>
+		<img src="1.svg" alt="Embedded SVG" width="300" height="300">
             </section>
             
             <section>
                 <h2>🌍 External Content</h2>
-                <iframe src="https://www.astro.com" width="800" height="500"></iframe>
+		<p>click on picture to get external content</p>
+		<div class="container">
+		<!-- Make the image a clickable link to the external website -->
+    		    <a href="https://www.astro.com" target="_blank">
+        	        <img id="fallbackImage" src="2.png" alt="Fallback Image" width="800" height="500">
+    		    </a>
+    
+    		<!-- iframe for external content (hidden initially) -->
+    		    <iframe id="externalContent" src="https://www.astro.com" width="800" height="500" style="display:none;"></iframe>
+		</div>
             </section>
         </div>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
     <script>
-        Reveal.initialize({
-            transition: 'convex',
-            slideNumber: true,
-            fragments: true
-        });
+  	Reveal.initialize({
+	  plugins: [ RevealMath ],
+    	  transition: 'fade', // Base transition
+    	  transitionSpeed: 'slow', // Makes it smoother
+  	});
     </script>
 </body>
 </html>
